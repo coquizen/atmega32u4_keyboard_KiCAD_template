@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 3
 Title ""
 Date ""
 Rev ""
@@ -467,23 +467,12 @@ Wire Wire Line
 Wire Wire Line
 	4765 4906 4765 5806
 Wire Wire Line
-	4615 5331 6365 5331
-Wire Wire Line
-	5415 5856 5415 5431
-Wire Wire Line
 	6790 5331 6890 5331
 Connection ~ 4715 6006
 Wire Wire Line
 	4490 5506 4265 5506
 Wire Wire Line
-	5565 5856 5415 5856
-Connection ~ 5415 5431
-Wire Wire Line
-	5240 5981 5240 5756
-Wire Wire Line
 	4265 4906 4765 4906
-Wire Wire Line
-	5565 5981 5240 5981
 Wire Wire Line
 	5690 4906 5490 4906
 Wire Wire Line
@@ -491,17 +480,11 @@ Wire Wire Line
 Wire Wire Line
 	4490 5306 4490 5431
 Wire Wire Line
-	6365 5331 6590 5331
-Wire Wire Line
-	5240 5756 5565 5756
-Wire Wire Line
 	4265 5306 4490 5306
 Wire Wire Line
 	5065 6081 5215 6081
 Wire Wire Line
 	4615 5206 4265 5206
-Wire Wire Line
-	5415 5431 6390 5431
 Wire Wire Line
 	4615 5331 4615 5206
 Wire Wire Line
@@ -571,23 +554,7 @@ $EndComp
 Wire Wire Line
 	4715 4806 4715 5906
 Wire Wire Line
-	4490 5431 5415 5431
-Wire Wire Line
 	4765 5806 4265 5806
-$Comp
-L ai03-locallib:PRTR5V0U2X U?
-U 1 1 5D74074F
-P 8102 5774
-F 0 "U?" H 8102 6071 60  0000 C CNN
-F 1 "PRTR5V0U2X" H 8102 5965 60  0000 C CNN
-F 2 "locallib:SOT143B" H 8102 5774 60  0001 C CNN
-F 3 "" H 8102 5774 60  0001 C CNN
-	1    8102 5774
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5565 6081 5565 5981
-Connection ~ 5565 6081
 Connection ~ 5140 4906
 $Comp
 L power:GND #PWR?
@@ -603,12 +570,12 @@ $EndComp
 $Comp
 L power:VCC #PWR?
 U 1 1 5D740751
-P 7254 6271
-F 0 "#PWR?" H 7254 6121 50  0001 C CNN
-F 1 "VCC" H 7271 6444 50  0000 C CNN
-F 2 "" H 7254 6271 50  0001 C CNN
-F 3 "" H 7254 6271 50  0001 C CNN
-	1    7254 6271
+P 7402 1714
+F 0 "#PWR?" H 7402 1564 50  0001 C CNN
+F 1 "VCC" H 7419 1887 50  0000 C CNN
+F 2 "" H 7402 1714 50  0001 C CNN
+F 3 "" H 7402 1714 50  0001 C CNN
+	1    7402 1714
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -628,8 +595,6 @@ Text GLabel 6890 5331 2    60   Input ~ 0
 D-
 Wire Wire Line
 	4265 5706 5015 5706
-Wire Wire Line
-	6165 5856 6365 5856
 $Comp
 L Device:R_Small R?
 U 1 1 5D740753
@@ -690,19 +655,66 @@ Connection ~ 4715 5906
 Wire Wire Line
 	4715 5906 4715 6006
 Wire Wire Line
-	6365 5856 6365 5331
-Connection ~ 6365 5331
-Wire Wire Line
-	7254 6271 7154 6271
+	7402 1714 7302 1714
 $Comp
 L Power_Protection:PRTR5V0U2X D?
 U 1 1 5D747837
-P 6654 6271
-F 0 "D?" V 6608 6812 50  0000 L CNN
-F 1 "PRTR5V0U2X" V 6699 6812 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-143" H 6714 6271 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf" H 6714 6271 50  0001 C CNN
-	1    6654 6271
+P 6802 1714
+F 0 "D?" V 6756 2255 50  0000 L CNN
+F 1 "PRTR5V0U2X" V 6847 2255 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-143" H 6862 1714 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf" H 6862 1714 50  0001 C CNN
+	1    6802 1714
 	0    1    1    0   
 $EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D74D3EC
+P 6302 1714
+F 0 "#PWR?" H 6302 1464 50  0001 C CNN
+F 1 "GND" H 6306 1543 50  0000 C CNN
+F 2 "" H 6302 1714 50  0001 C CNN
+F 3 "" H 6302 1714 50  0001 C CNN
+	1    6302 1714
+	1    0    0    -1  
+$EndComp
+Text GLabel 6802 2214 3    50   Input ~ 0
+D+ESD
+Text GLabel 6802 1214 1    50   Input ~ 0
+D-ESD
+Wire Wire Line
+	4615 5331 6590 5331
+Wire Wire Line
+	4490 5431 6390 5431
+Text GLabel 5478 5431 3    50   Input ~ 0
+D+ESD
+Text GLabel 5697 5331 1    50   Input ~ 0
+D-ESD
+Wire Bus Line
+	5866 838  5866 2897
+Wire Bus Line
+	5866 2897 8128 2897
+Wire Bus Line
+	8128 2897 8128 838 
+Wire Bus Line
+	5866 838  8128 838 
+Text Notes 6002 2755 0    50   ~ 0
+Power Protection
+$Sheet
+S 6583 3731 1311 670 
+U 5D752EB9
+F0 "Matrix" 50
+F1 "Matrix.sch" 50
+F2 "COL1" I R 7894 4006 50 
+F3 "COL0" I R 7894 4134 50 
+F4 "ROW1" I L 6583 4136 50 
+F5 "ROW0" I L 6583 4020 50 
+$EndSheet
+$Sheet
+S 8272 4954 1282 742 
+U 5D752EE2
+F0 "RGB_Underglow" 50
+F1 "RGB_Matrix.sch" 50
+F2 "RGBLED_3V3" I R 9554 5135 50 
+$EndSheet
 $EndSCHEMATC
